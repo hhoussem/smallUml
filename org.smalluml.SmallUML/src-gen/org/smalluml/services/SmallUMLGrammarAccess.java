@@ -144,13 +144,14 @@ public class SmallUMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRealParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cIntegerParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cString0ParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cEnumerationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cInfinityParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cEnumerationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		//Type:
-		//	Type_Impl | Boolean | Real | Integer | String0 | Enumeration;
+		//	Type_Impl | Boolean | Real | Integer | String0 | Infinity | Enumeration;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Type_Impl | Boolean | Real | Integer | String0 | Enumeration
+		//Type_Impl | Boolean | Real | Integer | String0 | Infinity | Enumeration
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Type_Impl
@@ -168,8 +169,11 @@ public class SmallUMLGrammarAccess extends AbstractGrammarElementFinder {
 		//String0
 		public RuleCall getString0ParserRuleCall_4() { return cString0ParserRuleCall_4; }
 		
+		//Infinity
+		public RuleCall getInfinityParserRuleCall_5() { return cInfinityParserRuleCall_5; }
+		
 		//Enumeration
-		public RuleCall getEnumerationParserRuleCall_5() { return cEnumerationParserRuleCall_5; }
+		public RuleCall getEnumerationParserRuleCall_6() { return cEnumerationParserRuleCall_6; }
 	}
 	public class ClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.smalluml.SmallUML.Class");
@@ -180,38 +184,51 @@ public class SmallUMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cAttributesKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cAttributesAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cAttributesAttributeParserRuleCall_4_2_0 = (RuleCall)cAttributesAssignment_4_2.eContents().get(0);
+		private final Keyword cParentsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cParentsAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final CrossReference cParentsClassCrossReference_4_2_0 = (CrossReference)cParentsAssignment_4_2.eContents().get(0);
+		private final RuleCall cParentsClassEStringParserRuleCall_4_2_0_1 = (RuleCall)cParentsClassCrossReference_4_2_0.eContents().get(1);
 		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
 		private final Keyword cCommaKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
-		private final Assignment cAttributesAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
-		private final RuleCall cAttributesAttributeParserRuleCall_4_3_1_0 = (RuleCall)cAttributesAssignment_4_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
+		private final Assignment cParentsAssignment_4_3_1 = (Assignment)cGroup_4_3.eContents().get(1);
+		private final CrossReference cParentsClassCrossReference_4_3_1_0 = (CrossReference)cParentsAssignment_4_3_1.eContents().get(0);
+		private final RuleCall cParentsClassEStringParserRuleCall_4_3_1_0_1 = (RuleCall)cParentsClassCrossReference_4_3_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cMethodsKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cAttributesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cMethodsAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cMethodsMethodParserRuleCall_5_2_0 = (RuleCall)cMethodsAssignment_5_2.eContents().get(0);
+		private final Assignment cAttributesAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cAttributesAttributeParserRuleCall_5_2_0 = (RuleCall)cAttributesAssignment_5_2.eContents().get(0);
 		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
 		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
-		private final Assignment cMethodsAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final RuleCall cMethodsMethodParserRuleCall_5_3_1_0 = (RuleCall)cMethodsAssignment_5_3_1.eContents().get(0);
+		private final Assignment cAttributesAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
+		private final RuleCall cAttributesAttributeParserRuleCall_5_3_1_0 = (RuleCall)cAttributesAssignment_5_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cMethodsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Assignment cMethodsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cMethodsMethodParserRuleCall_6_2_0 = (RuleCall)cMethodsAssignment_6_2.eContents().get(0);
+		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
+		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
+		private final Assignment cMethodsAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
+		private final RuleCall cMethodsMethodParserRuleCall_6_3_1_0 = (RuleCall)cMethodsAssignment_6_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Class:
 		//	{Class}
 		//	'Class'
 		//	name=EString
-		//	'{' ('attributes' '{' attributes+=Attribute ("," attributes+=Attribute)* '}')? ('methods' '{' methods+=Method (","
-		//	methods+=Method)* '}')?
+		//	'{' ('parents' '(' parents+=[Class|EString] ("," parents+=[Class|EString])* ')')? ('attributes' '{'
+		//	attributes+=Attribute ("," attributes+=Attribute)* '}')? ('methods' '{' methods+=Method ("," methods+=Method)* '}')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Class} 'Class' name=EString '{' ('attributes' '{' attributes+=Attribute ("," attributes+=Attribute)* '}')? ('methods'
-		//'{' methods+=Method ("," methods+=Method)* '}')? '}'
+		//{Class} 'Class' name=EString '{' ('parents' '(' parents+=[Class|EString] ("," parents+=[Class|EString])* ')')?
+		//('attributes' '{' attributes+=Attribute ("," attributes+=Attribute)* '}')? ('methods' '{' methods+=Method (","
+		//methods+=Method)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{Class}
@@ -229,68 +246,104 @@ public class SmallUMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//('attributes' '{' attributes+=Attribute ("," attributes+=Attribute)* '}')?
+		//('parents' '(' parents+=[Class|EString] ("," parents+=[Class|EString])* ')')?
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//'attributes'
-		public Keyword getAttributesKeyword_4_0() { return cAttributesKeyword_4_0; }
+		//'parents'
+		public Keyword getParentsKeyword_4_0() { return cParentsKeyword_4_0; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_4_1() { return cLeftParenthesisKeyword_4_1; }
 		
-		//attributes+=Attribute
-		public Assignment getAttributesAssignment_4_2() { return cAttributesAssignment_4_2; }
+		//parents+=[Class|EString]
+		public Assignment getParentsAssignment_4_2() { return cParentsAssignment_4_2; }
 		
-		//Attribute
-		public RuleCall getAttributesAttributeParserRuleCall_4_2_0() { return cAttributesAttributeParserRuleCall_4_2_0; }
+		//[Class|EString]
+		public CrossReference getParentsClassCrossReference_4_2_0() { return cParentsClassCrossReference_4_2_0; }
 		
-		//("," attributes+=Attribute)*
+		//EString
+		public RuleCall getParentsClassEStringParserRuleCall_4_2_0_1() { return cParentsClassEStringParserRuleCall_4_2_0_1; }
+		
+		//("," parents+=[Class|EString])*
 		public Group getGroup_4_3() { return cGroup_4_3; }
 		
 		//","
 		public Keyword getCommaKeyword_4_3_0() { return cCommaKeyword_4_3_0; }
 		
-		//attributes+=Attribute
-		public Assignment getAttributesAssignment_4_3_1() { return cAttributesAssignment_4_3_1; }
+		//parents+=[Class|EString]
+		public Assignment getParentsAssignment_4_3_1() { return cParentsAssignment_4_3_1; }
 		
-		//Attribute
-		public RuleCall getAttributesAttributeParserRuleCall_4_3_1_0() { return cAttributesAttributeParserRuleCall_4_3_1_0; }
+		//[Class|EString]
+		public CrossReference getParentsClassCrossReference_4_3_1_0() { return cParentsClassCrossReference_4_3_1_0; }
 		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
+		//EString
+		public RuleCall getParentsClassEStringParserRuleCall_4_3_1_0_1() { return cParentsClassEStringParserRuleCall_4_3_1_0_1; }
 		
-		//('methods' '{' methods+=Method ("," methods+=Method)* '}')?
+		//')'
+		public Keyword getRightParenthesisKeyword_4_4() { return cRightParenthesisKeyword_4_4; }
+		
+		//('attributes' '{' attributes+=Attribute ("," attributes+=Attribute)* '}')?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'methods'
-		public Keyword getMethodsKeyword_5_0() { return cMethodsKeyword_5_0; }
+		//'attributes'
+		public Keyword getAttributesKeyword_5_0() { return cAttributesKeyword_5_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
 		
-		//methods+=Method
-		public Assignment getMethodsAssignment_5_2() { return cMethodsAssignment_5_2; }
+		//attributes+=Attribute
+		public Assignment getAttributesAssignment_5_2() { return cAttributesAssignment_5_2; }
 		
-		//Method
-		public RuleCall getMethodsMethodParserRuleCall_5_2_0() { return cMethodsMethodParserRuleCall_5_2_0; }
+		//Attribute
+		public RuleCall getAttributesAttributeParserRuleCall_5_2_0() { return cAttributesAttributeParserRuleCall_5_2_0; }
 		
-		//("," methods+=Method)*
+		//("," attributes+=Attribute)*
 		public Group getGroup_5_3() { return cGroup_5_3; }
 		
 		//","
 		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
 		
-		//methods+=Method
-		public Assignment getMethodsAssignment_5_3_1() { return cMethodsAssignment_5_3_1; }
+		//attributes+=Attribute
+		public Assignment getAttributesAssignment_5_3_1() { return cAttributesAssignment_5_3_1; }
 		
-		//Method
-		public RuleCall getMethodsMethodParserRuleCall_5_3_1_0() { return cMethodsMethodParserRuleCall_5_3_1_0; }
+		//Attribute
+		public RuleCall getAttributesAttributeParserRuleCall_5_3_1_0() { return cAttributesAttributeParserRuleCall_5_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
 		
+		//('methods' '{' methods+=Method ("," methods+=Method)* '}')?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'methods'
+		public Keyword getMethodsKeyword_6_0() { return cMethodsKeyword_6_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
+		
+		//methods+=Method
+		public Assignment getMethodsAssignment_6_2() { return cMethodsAssignment_6_2; }
+		
+		//Method
+		public RuleCall getMethodsMethodParserRuleCall_6_2_0() { return cMethodsMethodParserRuleCall_6_2_0; }
+		
+		//("," methods+=Method)*
+		public Group getGroup_6_3() { return cGroup_6_3; }
+		
+		//","
+		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
+		
+		//methods+=Method
+		public Assignment getMethodsAssignment_6_3_1() { return cMethodsAssignment_6_3_1; }
+		
+		//Method
+		public RuleCall getMethodsMethodParserRuleCall_6_3_1_0() { return cMethodsMethodParserRuleCall_6_3_1_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class RelationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.smalluml.SmallUML.Relation");
@@ -637,6 +690,26 @@ public class SmallUMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'String'
 		public Keyword getStringKeyword_1() { return cStringKeyword_1; }
 	}
+	public class InfinityElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.smalluml.SmallUML.Infinity");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cInfinityAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cInfinityKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//Infinity:
+		//	{Infinity}
+		//	'Infinity';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Infinity} 'Infinity'
+		public Group getGroup() { return cGroup; }
+		
+		//{Infinity}
+		public Action getInfinityAction_0() { return cInfinityAction_0; }
+		
+		//'Infinity'
+		public Keyword getInfinityKeyword_1() { return cInfinityKeyword_1; }
+	}
 	public class EnumerationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.smalluml.SmallUML.Enumeration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -792,6 +865,7 @@ public class SmallUMLGrammarAccess extends AbstractGrammarElementFinder {
 	private final RealElements pReal;
 	private final IntegerElements pInteger;
 	private final String0Elements pString0;
+	private final InfinityElements pInfinity;
 	private final EnumerationElements pEnumeration;
 	private final CardinalityElements pCardinality;
 	private final EIntElements pEInt;
@@ -817,6 +891,7 @@ public class SmallUMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pReal = new RealElements();
 		this.pInteger = new IntegerElements();
 		this.pString0 = new String0Elements();
+		this.pInfinity = new InfinityElements();
 		this.pEnumeration = new EnumerationElements();
 		this.pCardinality = new CardinalityElements();
 		this.pEInt = new EIntElements();
@@ -864,7 +939,7 @@ public class SmallUMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Type:
-	//	Type_Impl | Boolean | Real | Integer | String0 | Enumeration;
+	//	Type_Impl | Boolean | Real | Integer | String0 | Infinity | Enumeration;
 	public TypeElements getTypeAccess() {
 		return pType;
 	}
@@ -877,8 +952,8 @@ public class SmallUMLGrammarAccess extends AbstractGrammarElementFinder {
 	//	{Class}
 	//	'Class'
 	//	name=EString
-	//	'{' ('attributes' '{' attributes+=Attribute ("," attributes+=Attribute)* '}')? ('methods' '{' methods+=Method (","
-	//	methods+=Method)* '}')?
+	//	'{' ('parents' '(' parents+=[Class|EString] ("," parents+=[Class|EString])* ')')? ('attributes' '{'
+	//	attributes+=Attribute ("," attributes+=Attribute)* '}')? ('methods' '{' methods+=Method ("," methods+=Method)* '}')?
 	//	'}';
 	public ClassElements getClassAccess() {
 		return pClass;
@@ -996,6 +1071,17 @@ public class SmallUMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getString0Rule() {
 		return getString0Access().getRule();
+	}
+	
+	//Infinity:
+	//	{Infinity}
+	//	'Infinity';
+	public InfinityElements getInfinityAccess() {
+		return pInfinity;
+	}
+	
+	public ParserRule getInfinityRule() {
+		return getInfinityAccess().getRule();
 	}
 	
 	//Enumeration:

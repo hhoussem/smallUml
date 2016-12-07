@@ -1,6 +1,48 @@
--- @path MM=/SmallUML/model/smalluml.ecore
--- @path MM1=/UML/model/uml.ecore
+-- @path smallUml=/SmallUML/model/smalluml.ecore
+-- @path uml=/UML/model/uml.ecore
 
 module Small2UML;
-create OUT : MM1 from IN : MM;
+create OUT : smallUml from IN : uml;
+
+rule SmallType2Type {
+	from
+		f: MM!Type
+	to
+		t: MM1!Type (
+			name <- f.name
+		)
+}
+
+rule SmallClass2Class {
+	from
+		f: MM!Class
+	to
+		t: MM1!Class (
+			ownedOperation <- f.operations,
+			superClass <- f.extends,
+			attribute <- f.attributes,
+			isAbstract <- f.abstract
+		)
+}
+
+rule SmallAttribute2Attribute {
+	from
+		f: MM!Attribute
+	to
+		t: MM1!Property (
+			name <- f.name,
+			type <- f.type
+		)
+}
+
+rule SmallOperation2Operation {
+	from
+		f: MM!Operation
+	to
+		t: MM1!Operation (
+			name <- f.name,
+			type <- f.returnType,
+			ownedParameter <- f.parameters
+		)
+}
 

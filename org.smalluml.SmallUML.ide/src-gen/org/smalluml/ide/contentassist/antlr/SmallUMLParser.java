@@ -47,6 +47,8 @@ public class SmallUMLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getClassAccess().getGroup_4_3(), "rule__Class__Group_4_3__0");
 					put(grammarAccess.getClassAccess().getGroup_5(), "rule__Class__Group_5__0");
 					put(grammarAccess.getClassAccess().getGroup_5_3(), "rule__Class__Group_5_3__0");
+					put(grammarAccess.getClassAccess().getGroup_6(), "rule__Class__Group_6__0");
+					put(grammarAccess.getClassAccess().getGroup_6_3(), "rule__Class__Group_6_3__0");
 					put(grammarAccess.getRelationAccess().getGroup(), "rule__Relation__Group__0");
 					put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
 					put(grammarAccess.getMethodAccess().getGroup(), "rule__Method__Group__0");
@@ -58,6 +60,7 @@ public class SmallUMLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRealAccess().getGroup(), "rule__Real__Group__0");
 					put(grammarAccess.getIntegerAccess().getGroup(), "rule__Integer__Group__0");
 					put(grammarAccess.getString0Access().getGroup(), "rule__String0__Group__0");
+					put(grammarAccess.getInfinityAccess().getGroup(), "rule__Infinity__Group__0");
 					put(grammarAccess.getEnumerationAccess().getGroup(), "rule__Enumeration__Group__0");
 					put(grammarAccess.getEnumerationAccess().getGroup_6(), "rule__Enumeration__Group_6__0");
 					put(grammarAccess.getCardinalityAccess().getGroup(), "rule__Cardinality__Group__0");
@@ -67,10 +70,12 @@ public class SmallUMLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPackageAccess().getRelationAssignment_4_2(), "rule__Package__RelationAssignment_4_2");
 					put(grammarAccess.getPackageAccess().getRelationAssignment_4_3_1(), "rule__Package__RelationAssignment_4_3_1");
 					put(grammarAccess.getClassAccess().getNameAssignment_2(), "rule__Class__NameAssignment_2");
-					put(grammarAccess.getClassAccess().getAttributesAssignment_4_2(), "rule__Class__AttributesAssignment_4_2");
-					put(grammarAccess.getClassAccess().getAttributesAssignment_4_3_1(), "rule__Class__AttributesAssignment_4_3_1");
-					put(grammarAccess.getClassAccess().getMethodsAssignment_5_2(), "rule__Class__MethodsAssignment_5_2");
-					put(grammarAccess.getClassAccess().getMethodsAssignment_5_3_1(), "rule__Class__MethodsAssignment_5_3_1");
+					put(grammarAccess.getClassAccess().getParentsAssignment_4_2(), "rule__Class__ParentsAssignment_4_2");
+					put(grammarAccess.getClassAccess().getParentsAssignment_4_3_1(), "rule__Class__ParentsAssignment_4_3_1");
+					put(grammarAccess.getClassAccess().getAttributesAssignment_5_2(), "rule__Class__AttributesAssignment_5_2");
+					put(grammarAccess.getClassAccess().getAttributesAssignment_5_3_1(), "rule__Class__AttributesAssignment_5_3_1");
+					put(grammarAccess.getClassAccess().getMethodsAssignment_6_2(), "rule__Class__MethodsAssignment_6_2");
+					put(grammarAccess.getClassAccess().getMethodsAssignment_6_3_1(), "rule__Class__MethodsAssignment_6_3_1");
 					put(grammarAccess.getRelationAccess().getNameAssignment_1(), "rule__Relation__NameAssignment_1");
 					put(grammarAccess.getRelationAccess().getFromAssignment_4(), "rule__Relation__FromAssignment_4");
 					put(grammarAccess.getRelationAccess().getToAssignment_6(), "rule__Relation__ToAssignment_6");

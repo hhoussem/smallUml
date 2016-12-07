@@ -18,7 +18,7 @@ Package returns Package:
 
 
 Type returns Type:
-	Type_Impl | Boolean | Real | Integer | String0 | Enumeration;
+	Type_Impl | Boolean | Real | Integer | String0 | Infinity | Enumeration;
 
 
 Class returns Class:
@@ -26,6 +26,7 @@ Class returns Class:
 	'Class'
 	name=EString
 	'{'
+		('parents' '(' parents+=[Class|EString] ( "," parents+=[Class|EString])* ')' )?
 		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
 		('methods' '{' methods+=Method ( "," methods+=Method)* '}' )?
 	'}';
@@ -81,6 +82,11 @@ Integer returns Integer:
 String0 returns String:
 	{String}
 	'String'
+	;
+
+Infinity returns Infinity:
+	{Infinity}
+	'Infinity'
 	;
 
 Enumeration returns Enumeration:

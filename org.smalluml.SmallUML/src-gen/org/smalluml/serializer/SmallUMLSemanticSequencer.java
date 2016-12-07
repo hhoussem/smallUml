@@ -18,6 +18,7 @@ import org.smalluml.services.SmallUMLGrammarAccess;
 import smalluml.Attribute;
 import smalluml.Cardinality;
 import smalluml.Enumeration;
+import smalluml.Infinity;
 import smalluml.Method;
 import smalluml.Real;
 import smalluml.Relation;
@@ -52,6 +53,9 @@ public class SmallUMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case SmallumlPackage.ENUMERATION:
 				sequence_Enumeration(context, (Enumeration) semanticObject); 
+				return; 
+			case SmallumlPackage.INFINITY:
+				sequence_Infinity(context, (Infinity) semanticObject); 
 				return; 
 			case SmallumlPackage.INTEGER:
 				sequence_Integer(context, (smalluml.Integer) semanticObject); 
@@ -139,7 +143,12 @@ public class SmallUMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Class returns Class
 	 *
 	 * Constraint:
-	 *     (name=EString (attributes+=Attribute attributes+=Attribute*)? (methods+=Method methods+=Method*)?)
+	 *     (
+	 *         name=EString 
+	 *         (parents+=[Class|EString] parents+=[Class|EString]*)? 
+	 *         (attributes+=Attribute attributes+=Attribute*)? 
+	 *         (methods+=Method methods+=Method*)?
+	 *     )
 	 */
 	protected void sequence_Class(ISerializationContext context, smalluml.Class semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -155,6 +164,19 @@ public class SmallUMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     (name=EString value+=String0 value+=String0*)
 	 */
 	protected void sequence_Enumeration(ISerializationContext context, Enumeration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Type returns Infinity
+	 *     Infinity returns Infinity
+	 *
+	 * Constraint:
+	 *     {Infinity}
+	 */
+	protected void sequence_Infinity(ISerializationContext context, Infinity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
