@@ -3,58 +3,63 @@
 package smalluml.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import smalluml.Attribute;
-import smalluml.Method;
+
+import smalluml.Relation;
 import smalluml.SmallumlPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Class</b></em>'.
+ * An implementation of the model object '<em><b>Package</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link smalluml.impl.ClassImpl#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link smalluml.impl.ClassImpl#getMethods <em>Methods</em>}</li>
+ *   <li>{@link smalluml.impl.PackageImpl#getClass_ <em>Class</em>}</li>
+ *   <li>{@link smalluml.impl.PackageImpl#getRelation <em>Relation</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ClassImpl extends NamedElementImpl implements smalluml.Class {
+public class PackageImpl extends MinimalEObjectImpl.Container implements smalluml.Package {
 	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
+	 * The cached value of the '{@link #getClass_() <em>Class</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
+	 * @see #getClass_()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Attribute> attributes;
+	protected EList<smalluml.Class> class_;
 
 	/**
-	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
+	 * The cached value of the '{@link #getRelation() <em>Relation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMethods()
+	 * @see #getRelation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Method> methods;
+	protected EList<Relation> relation;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ClassImpl() {
+	protected PackageImpl() {
 		super();
 	}
 
@@ -65,7 +70,7 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SmallumlPackage.Literals.CLASS;
+		return SmallumlPackage.Literals.PACKAGE;
 	}
 
 	/**
@@ -73,11 +78,11 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attribute> getAttributes() {
-		if (attributes == null) {
-			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, SmallumlPackage.CLASS__ATTRIBUTES);
+	public EList<smalluml.Class> getClass_() {
+		if (class_ == null) {
+			class_ = new EObjectContainmentEList<smalluml.Class>(smalluml.Class.class, this, SmallumlPackage.PACKAGE__CLASS);
 		}
-		return attributes;
+		return class_;
 	}
 
 	/**
@@ -85,11 +90,11 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Method> getMethods() {
-		if (methods == null) {
-			methods = new EObjectContainmentEList<Method>(Method.class, this, SmallumlPackage.CLASS__METHODS);
+	public EList<Relation> getRelation() {
+		if (relation == null) {
+			relation = new EObjectContainmentEList<Relation>(Relation.class, this, SmallumlPackage.PACKAGE__RELATION);
 		}
-		return methods;
+		return relation;
 	}
 
 	/**
@@ -100,10 +105,10 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SmallumlPackage.CLASS__ATTRIBUTES:
-				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
-			case SmallumlPackage.CLASS__METHODS:
-				return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
+			case SmallumlPackage.PACKAGE__CLASS:
+				return ((InternalEList<?>)getClass_()).basicRemove(otherEnd, msgs);
+			case SmallumlPackage.PACKAGE__RELATION:
+				return ((InternalEList<?>)getRelation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -116,10 +121,10 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SmallumlPackage.CLASS__ATTRIBUTES:
-				return getAttributes();
-			case SmallumlPackage.CLASS__METHODS:
-				return getMethods();
+			case SmallumlPackage.PACKAGE__CLASS:
+				return getClass_();
+			case SmallumlPackage.PACKAGE__RELATION:
+				return getRelation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -133,13 +138,13 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SmallumlPackage.CLASS__ATTRIBUTES:
-				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends Attribute>)newValue);
+			case SmallumlPackage.PACKAGE__CLASS:
+				getClass_().clear();
+				getClass_().addAll((Collection<? extends smalluml.Class>)newValue);
 				return;
-			case SmallumlPackage.CLASS__METHODS:
-				getMethods().clear();
-				getMethods().addAll((Collection<? extends Method>)newValue);
+			case SmallumlPackage.PACKAGE__RELATION:
+				getRelation().clear();
+				getRelation().addAll((Collection<? extends Relation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,11 +158,11 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SmallumlPackage.CLASS__ATTRIBUTES:
-				getAttributes().clear();
+			case SmallumlPackage.PACKAGE__CLASS:
+				getClass_().clear();
 				return;
-			case SmallumlPackage.CLASS__METHODS:
-				getMethods().clear();
+			case SmallumlPackage.PACKAGE__RELATION:
+				getRelation().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -171,12 +176,12 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SmallumlPackage.CLASS__ATTRIBUTES:
-				return attributes != null && !attributes.isEmpty();
-			case SmallumlPackage.CLASS__METHODS:
-				return methods != null && !methods.isEmpty();
+			case SmallumlPackage.PACKAGE__CLASS:
+				return class_ != null && !class_.isEmpty();
+			case SmallumlPackage.PACKAGE__RELATION:
+				return relation != null && !relation.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ClassImpl
+} //PackageImpl

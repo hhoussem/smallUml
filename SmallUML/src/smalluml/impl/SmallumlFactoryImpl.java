@@ -10,8 +10,15 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import smalluml.Attribute;
+import smalluml.Cardinality;
+import smalluml.Enumeration;
+import smalluml.Method;
+import smalluml.Real;
+import smalluml.Relation;
 import smalluml.SmallumlFactory;
 import smalluml.SmallumlPackage;
+import smalluml.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +64,18 @@ public class SmallumlFactoryImpl extends EFactoryImpl implements SmallumlFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case SmallumlPackage.TYPE: return createType();
+			case SmallumlPackage.BOOLEAN: return createBoolean();
+			case SmallumlPackage.REAL: return createReal();
+			case SmallumlPackage.INTEGER: return createInteger();
+			case SmallumlPackage.STRING: return createString();
+			case SmallumlPackage.ENUMERATION: return createEnumeration();
 			case SmallumlPackage.CLASS: return createClass();
+			case SmallumlPackage.ATTRIBUTE: return createAttribute();
+			case SmallumlPackage.METHOD: return createMethod();
+			case SmallumlPackage.RELATION: return createRelation();
+			case SmallumlPackage.CARDINALITY: return createCardinality();
+			case SmallumlPackage.PACKAGE: return createPackage();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -68,9 +86,119 @@ public class SmallumlFactoryImpl extends EFactoryImpl implements SmallumlFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Type createType() {
+		TypeImpl type = new TypeImpl();
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public smalluml.Boolean createBoolean() {
+		BooleanImpl boolean_ = new BooleanImpl();
+		return boolean_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Real createReal() {
+		RealImpl real = new RealImpl();
+		return real;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public smalluml.Integer createInteger() {
+		IntegerImpl integer = new IntegerImpl();
+		return integer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public smalluml.String createString() {
+		StringImpl string = new StringImpl();
+		return string;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enumeration createEnumeration() {
+		EnumerationImpl enumeration = new EnumerationImpl();
+		return enumeration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public smalluml.Class createClass() {
 		ClassImpl class_ = new ClassImpl();
 		return class_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attribute createAttribute() {
+		AttributeImpl attribute = new AttributeImpl();
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Method createMethod() {
+		MethodImpl method = new MethodImpl();
+		return method;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Relation createRelation() {
+		RelationImpl relation = new RelationImpl();
+		return relation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cardinality createCardinality() {
+		CardinalityImpl cardinality = new CardinalityImpl();
+		return cardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public smalluml.Package createPackage() {
+		PackageImpl package_ = new PackageImpl();
+		return package_;
 	}
 
 	/**
