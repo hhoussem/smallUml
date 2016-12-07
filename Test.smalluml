@@ -1,0 +1,36 @@
+Package {
+	class {
+		Class Person {
+			attributes {
+				Attribute name {
+					typedValue String
+				},
+				Attribute age {
+					typedValue Integer
+				}
+			}
+			methods {
+				Method getName {
+					returnTypedValue String
+				},
+				Method setName {
+					parameters {
+						Attribute "_name" {
+							typedValue String
+						}
+					}
+				}
+			}
+		},
+		
+		Class School {
+		}
+	}
+	relation {
+		Relation relationPersonSchool {
+			from Person to School cardinality Cardinality {
+				lowerBound 0 upperBound 1
+			}
+		}
+	}
+}
