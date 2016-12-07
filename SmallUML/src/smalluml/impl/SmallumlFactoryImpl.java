@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import smalluml.Attribute;
 import smalluml.Cardinality;
 import smalluml.Enumeration;
+import smalluml.Infinity;
 import smalluml.Method;
 import smalluml.Real;
 import smalluml.Relation;
@@ -69,6 +70,7 @@ public class SmallumlFactoryImpl extends EFactoryImpl implements SmallumlFactory
 			case SmallumlPackage.REAL: return createReal();
 			case SmallumlPackage.INTEGER: return createInteger();
 			case SmallumlPackage.STRING: return createString();
+			case SmallumlPackage.INFINITY: return createInfinity();
 			case SmallumlPackage.ENUMERATION: return createEnumeration();
 			case SmallumlPackage.CLASS: return createClass();
 			case SmallumlPackage.ATTRIBUTE: return createAttribute();
@@ -129,6 +131,16 @@ public class SmallumlFactoryImpl extends EFactoryImpl implements SmallumlFactory
 	public smalluml.String createString() {
 		StringImpl string = new StringImpl();
 		return string;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Infinity createInfinity() {
+		InfinityImpl infinity = new InfinityImpl();
+		return infinity;
 	}
 
 	/**

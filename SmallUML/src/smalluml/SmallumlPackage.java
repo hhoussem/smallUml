@@ -235,6 +235,34 @@ public interface SmallumlPackage extends EPackage {
 	int STRING_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link smalluml.impl.InfinityImpl <em>Infinity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smalluml.impl.InfinityImpl
+	 * @see smalluml.impl.SmallumlPackageImpl#getInfinity()
+	 * @generated
+	 */
+	int INFINITY = 6;
+
+	/**
+	 * The number of structural features of the '<em>Infinity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFINITY_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Infinity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INFINITY_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link smalluml.impl.EnumerationImpl <em>Enumeration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -242,7 +270,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getEnumeration()
 	 * @generated
 	 */
-	int ENUMERATION = 6;
+	int ENUMERATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -288,7 +316,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 7;
+	int CLASS = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -318,13 +346,22 @@ public interface SmallumlPackage extends EPackage {
 	int CLASS__METHODS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Parents</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__PARENTS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CLASS_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Class</em>' class.
@@ -344,7 +381,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 8;
+	int ATTRIBUTE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -390,7 +427,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getMethod()
 	 * @generated
 	 */
-	int METHOD = 9;
+	int METHOD = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -445,7 +482,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getRelation()
 	 * @generated
 	 */
-	int RELATION = 10;
+	int RELATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -509,7 +546,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 11;
+	int CARDINALITY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -555,7 +592,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getPackage()
 	 * @generated
 	 */
-	int PACKAGE = 12;
+	int PACKAGE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' containment reference list.
@@ -666,6 +703,16 @@ public interface SmallumlPackage extends EPackage {
 	EClass getString();
 
 	/**
+	 * Returns the meta object for class '{@link smalluml.Infinity <em>Infinity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Infinity</em>'.
+	 * @see smalluml.Infinity
+	 * @generated
+	 */
+	EClass getInfinity();
+
+	/**
 	 * Returns the meta object for class '{@link smalluml.Enumeration <em>Enumeration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -717,6 +764,17 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getClass_Methods();
+
+	/**
+	 * Returns the meta object for the reference list '{@link smalluml.Class#getParents <em>Parents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Parents</em>'.
+	 * @see smalluml.Class#getParents()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_Parents();
 
 	/**
 	 * Returns the meta object for class '{@link smalluml.Attribute <em>Attribute</em>}'.
@@ -970,6 +1028,16 @@ public interface SmallumlPackage extends EPackage {
 		EClass STRING = eINSTANCE.getString();
 
 		/**
+		 * The meta object literal for the '{@link smalluml.impl.InfinityImpl <em>Infinity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smalluml.impl.InfinityImpl
+		 * @see smalluml.impl.SmallumlPackageImpl#getInfinity()
+		 * @generated
+		 */
+		EClass INFINITY = eINSTANCE.getInfinity();
+
+		/**
 		 * The meta object literal for the '{@link smalluml.impl.EnumerationImpl <em>Enumeration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1012,6 +1080,14 @@ public interface SmallumlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CLASS__METHODS = eINSTANCE.getClass_Methods();
+
+		/**
+		 * The meta object literal for the '<em><b>Parents</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__PARENTS = eINSTANCE.getClass_Parents();
 
 		/**
 		 * The meta object literal for the '{@link smalluml.impl.AttributeImpl <em>Attribute</em>}' class.

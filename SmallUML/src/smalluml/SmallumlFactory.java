@@ -67,6 +67,15 @@ public interface SmallumlFactory extends EFactory {
 	String createString();
 
 	/**
+	 * Returns a new object of class '<em>Infinity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Infinity</em>'.
+	 * @generated
+	 */
+	Infinity createInfinity();
+
+	/**
 	 * Returns a new object of class '<em>Enumeration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

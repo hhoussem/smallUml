@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link smalluml.Class#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link smalluml.Class#getMethods <em>Methods</em>}</li>
+ *   <li>{@link smalluml.Class#getParents <em>Parents</em>}</li>
  * </ul>
  *
  * @see smalluml.SmallumlPackage#getClass_()
@@ -53,5 +54,21 @@ public interface Class extends NamedElement {
 	 * @generated
 	 */
 	EList<Method> getMethods();
+
+	/**
+	 * Returns the value of the '<em><b>Parents</b></em>' reference list.
+	 * The list contents are of type {@link smalluml.Class}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parents</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parents</em>' reference list.
+	 * @see smalluml.SmallumlPackage#getClass_Parents()
+	 * @model
+	 * @generated
+	 */
+	EList<Class> getParents();
 
 } // Class

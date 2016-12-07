@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import smalluml.Attribute;
 import smalluml.Cardinality;
 import smalluml.Enumeration;
+import smalluml.Infinity;
 import smalluml.Method;
 import smalluml.NamedElement;
 import smalluml.Real;
@@ -98,6 +99,10 @@ public class SmallumlAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseString(smalluml.String object) {
 				return createStringAdapter();
+			}
+			@Override
+			public Adapter caseInfinity(Infinity object) {
+				return createInfinityAdapter();
 			}
 			@Override
 			public Adapter caseEnumeration(Enumeration object) {
@@ -228,6 +233,20 @@ public class SmallumlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStringAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link smalluml.Infinity <em>Infinity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smalluml.Infinity
+	 * @generated
+	 */
+	public Adapter createInfinityAdapter() {
 		return null;
 	}
 

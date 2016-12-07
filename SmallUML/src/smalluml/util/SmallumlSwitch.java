@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import smalluml.Attribute;
 import smalluml.Cardinality;
 import smalluml.Enumeration;
+import smalluml.Infinity;
 import smalluml.Method;
 import smalluml.NamedElement;
 import smalluml.Real;
@@ -111,6 +112,13 @@ public class SmallumlSwitch<T> extends Switch<T> {
 				smalluml.String string = (smalluml.String)theEObject;
 				T result = caseString(string);
 				if (result == null) result = caseType(string);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmallumlPackage.INFINITY: {
+				Infinity infinity = (Infinity)theEObject;
+				T result = caseInfinity(infinity);
+				if (result == null) result = caseType(infinity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -253,6 +261,21 @@ public class SmallumlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseString(smalluml.String object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Infinity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Infinity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInfinity(Infinity object) {
 		return null;
 	}
 

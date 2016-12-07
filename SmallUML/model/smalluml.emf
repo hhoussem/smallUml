@@ -2,7 +2,7 @@
 package smalluml;
 
 abstract class NamedElement {
-  attr EString[1] name = "";
+  attr EString[1] name;
 }
 
 class Type {
@@ -20,6 +20,9 @@ class Integer extends Type {
 class String extends Type {
 }
 
+class Infinity extends Type {
+}
+
 class Enumeration extends NamedElement, Type {
   val String[+] value;
 }
@@ -27,6 +30,7 @@ class Enumeration extends NamedElement, Type {
 class Class extends NamedElement {
   val Attribute[*] attributes;
   val Method[*] methods;
+  ref Class[*] parents;
 }
 
 class Attribute extends NamedElement {
