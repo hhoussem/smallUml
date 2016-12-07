@@ -22,8 +22,16 @@ Package {
 				}
 			}
 		},
-		
+		Class Student {
+			parents ( Person ) attributes {
+				
+				Attribute score {
+					typedValue Real
+				}
+			}
+		},
 		Class School {
+		
 		}
 	}
 	relation {
