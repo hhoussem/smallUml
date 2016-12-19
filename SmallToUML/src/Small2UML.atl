@@ -20,15 +20,16 @@ rule SmallClass2Class {
 		f: smalluml!Class
 	to
 		t: uml!Class (
-			ownedOperation <- f.methods,
+			name <- f.name,
 			superClass <- f.parents,
-			attribute <- f.attributes
+			ownedOperation <- f.methods,
+			attribute <- f.attributes->collect(attribute | thisModule.SmallAttribute2Attribute(attribute))
 		)
 }
 
 
 
-rule SmallAttribute2Attribute {
+lazy rule SmallAttribute2Attribute {
 	from
 		f: smalluml!Attribute
 	to
@@ -38,6 +39,8 @@ rule SmallAttribute2Attribute {
 		)
 }
 
+
+
 rule SmallMethod2Operation {
 	from
 		f: smalluml!Method
@@ -45,6 +48,99 @@ rule SmallMethod2Operation {
 		t: uml!Operation (
 			name <- f.name,
 			type <- f.returnTypedValue,
-			ownedParameter <- f.parameters
+			ownedParameter <- f.parameters->collect(parameter | thisModule.SmallAttribute2Parameter(parameter))
 		)
 }
+
+lazy rule SmallAttribute2Parameter {
+	from
+		f: smalluml!Attribute
+	to
+		t: uml!Parameter (
+			name <- f.name,
+			type <- f.typedValue
+		)
+}
+
+
+lazy rule SmallRelationFrom2Property {
+	from f : smalluml!Relation
+	to t : uml!Property (
+		name <- f.from.name,
+		lower <- f.cardinality.lowerBound,
+		upper <- f.cardinality.upperBound
+	)
+}
+
+rule SmallRelation2Association {
+	from f : smalluml!Relation
+	to t : uml!Association (
+		name <- f.name,
+		memberEnd <- thisModule.SmallRelationFrom2Property(f)
+	)
+}
+
+
+
+rule SmallPackage2Package {
+	from
+		f : smalluml!Package
+	to 
+		t : uml!Package (
+			name <- 'Package',
+			packagedElement <- f.relation.union(f.class)
+		)
+}
+
+
+rule SmallString2PrimitiveType {
+	from f : smalluml!"String"
+	to t : uml!PrimitiveType (
+		name <- 'String'
+	)
+}
+
+rule SmallBoolean2PrimitiveType {
+	from f : smalluml!"Boolean"
+	to t : uml!PrimitiveType (
+		name <- 'Boolean'	
+	)
+}
+
+rule SmallReal2PrimitiveType {
+	from f : smalluml!"Real"
+	to t : uml!PrimitiveType (
+		name <- 'Real'	
+	)
+}
+rule SmallInt2PrimitiveType {
+	from f : smalluml!"Integer"
+	to t : uml!PrimitiveType (
+		name <- 'Integer'	
+	)
+}
+
+rule SmallInfinity2PrimitiveType {
+	from f : smalluml!"Infinity"
+	to t : uml!PrimitiveType (
+		name <- 'UnlimitedNatural'	
+	)
+}
+
+lazy rule SamllEnumerationValue2Property {
+	from f : smalluml!Enumeration
+	to t : uml!Property (
+		name <- f.value
+	)
+}
+
+rule SmallEnumeration2Enumeration {
+	from f : smalluml!Enumeration
+	to t : uml!Enumeration (
+		name <- f.name,
+		ownedAttribute <- f.value -> collect(value | thisModule. SamllEnumerationValue2Property(value))
+	)
+}
+
+
+
